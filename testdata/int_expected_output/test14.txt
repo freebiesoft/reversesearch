@@ -1,0 +1,8 @@
+<Jun 18, 2010 2:02:52 AM IST> <Error> <oracle.iam.configservice.impl>
+<IAM-3020003> <The attribute User Type does not exist!>
+<Jun 17, 2010 11:02:52 PM IST> <Error> <oracle.iam.configservice.impl>
+<IAM-3020003> <The attribute User Type does not exist!>
+<Jun 16, 2010 2:02:52 PM IST> <Error> <oracle.iam.configservice.impl>
+<IAM-3020003> <The attribute User Type does not exist!>
+<Jun 15, 2010 2:02:52 AM IST> <Error> <oracle.iam.configservice.impl>
+<IAM-3020003> <The attribute User Type does not exist!>

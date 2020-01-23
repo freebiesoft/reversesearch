@@ -1,0 +1,6 @@
+<Jun 16, 2010 6:02:02 AM IST> small entry
+<Jun 15, 2010 2:01:20 AM IST> <Error> <oracle.iam.platform.authz.impl>
+<IAM-1010032> abc
+<IAM-0091108> <readme.txt is not a valid connector resource file.>
+<IAM-0091108> <readme.txt is not a valid connector resource file.>
+<IAM-0091108> <readme.txt is not a valid connector resource file.>

@@ -1,0 +1,12 @@
+<Jun 18, 2010 2:02:52 AM IST> <Error> <oracle.iam.configservice.impl>
+<IAM-3020003> <The attribute User Type does not exist!>
+<Jun 18, 2010 2:02:02 AM IST> <Warning> <oracle.iam.platform.canonic.agentry>
+<IAM-0091108> <readme.txt is not a valid connector resource file.>
+<Jun 18, 2010 2:01:20 AM IST> <Error> <oracle.iam.platform.authz.impl>
+<IAM-1010032> 
+<blahblah>
+<No OES Policy found for the given Action.>
+<Jun 17, 2010 11:02:52 PM IST> <Error> <oracle.iam.configservice.impl>
+<IAM-3020003> <The attribute User Type does not exist!>
+<Jun 17, 2010 11:02:02 PM IST> <Warning> <oracle.iam.platform.canonic.agentry>
+<IAM-1010232> <readme.txt is not a valid connector resource file.>

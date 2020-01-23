@@ -1,0 +1,3 @@
+<Jun 15, 2010 2:01:20 AM IST> <Error> <oracle.iam.platform.authz.impl>
+<IAM-1010032> abc
+<No OES Policy found for the given Action.>
