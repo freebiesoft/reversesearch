@@ -31,8 +31,6 @@ import (
 // chance of using too much memory.
 var MaxBufLen = 2000000 // 2MB
 
-var debugstr = ""
-
 // StartBufLen defines the starting length of the bytes buffer which is used to
 // read bytes from log files. It is advised that this value is sufficietly large
 // so as to reduce the number of file accesses and hence boost performance.
@@ -280,10 +278,6 @@ func findLogEntries(buf []byte, bOffset int64, scanToPos int, lastNlPos int,
 		nlInfo := nlData.([2]int)
 		nlPos := nlInfo[0]
 		nlSize := nlInfo[1]
-
-		if nlPos <= 828 {
-			debugstr = string(buf[nlPos+nlSize : lastNlPos])
-		}
 
 		// determine if the bytes between nlPos and lastNlPos is the first line of a
 		// log entry and if so, if it satisfies time constraints

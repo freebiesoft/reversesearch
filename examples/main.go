@@ -204,7 +204,7 @@ func main() {
 		}
 	}
 
-	// pass log file, search criteria, and our custom output handler to ReverseSearch
+	// pass log file, search critgit fetcheria, and our custom output handler to ReverseSearch
 	_, err = reversesearch.ReverseSearch(odlLog, &searchCriteria, outputHandler)
 	if err != nil {
 		panic(err)
