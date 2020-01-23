@@ -20,6 +20,7 @@ var apacheTimeFormat = `02/Jan/2006:15:04:05 -0700`
 var odlStartPattern = `^<(\w{3} \d{2}, \d{4} \d{1,2}:\d{2}:\d{2} (?:AM|PM) (?:\S+))>`
 var odlTimeFormat = `Jan 2, 2006 3:04:05 PM MST`
 
+// #TODO: split phase 1 and phase 2 into separate functions
 // TestFindLogEntries tests the findLogEntries function in reversesearch.
 // Both green and red path testing (bunched them together for convenience
 // and because there's only 1 red path test). There are two phases of tests in
