@@ -1,5 +1,9 @@
-/*Package reversesearch package contains functions that together achieve the goal
-of searching files in reverse, along with unit tests (in reversesearch_unit_test.go).*/
+/*Package reversesearch manages the reverse searching of log files. The idea
+behind this is that a lot of the time large log files want to be searched,
+technicians are only interested in searching within the recent past. Under such
+scenarios it would be much more effiicient to search log files in reverse, and
+then terminate the search upon finding a log entry that was logged before a
+specified time. */
 package reversesearch
 
 /* All the main functions are contained in this file:
@@ -36,13 +40,18 @@ var MaxBufLen = 2000000 // 2MB
 // so as to reduce the number of file accesses and hence boost performance.
 var StartBufLen = 25000 // default is 25KB
 
-// OutputHandler ...
-// function interface for output handler (i.e. what to do with matching log entries)
+// OutputHandler is an interface for functions that can optionally be provided
+// provided to ReverseSearch as a parameter. When no output handler is passed to
+// ReverseSearch (i.e. outputHandler parameter is set as nil), matching log entries
+// will just be printed to STDOUT, however, when a function that implements this
+// interface is passed as the outputHandler parameter, matching log entries will
+// be passed to that function as they're discovered.
 type OutputHandler func(logEntry []byte)
 
-// SearchCriteria is a struct that defines the search criteria that can be passed
+// SearchCriteria is a struct that defines the search criteria that is passed
 // to ReverseSearch. ReverseSearch then uses this search criteria to search the
-// log file passed to it for matching log entries.
+// log file passed to it for matching log entries. Please see examples/main.go
+// for instantiation examples of this struct.
 type SearchCriteria struct {
 	// Regexps is a slice of strings. Each string needs to represent a valid golang
 	// regular expression. Matching log entries must match each regular expression
@@ -74,7 +83,8 @@ type SearchCriteria struct {
 	// LeTimeFormat represents the golang time format of the log file's log entries'
 	// timestamps. This field is required only when at least one of FromTime or
 	// UntilTime are set. This will be used to parse the string in the first
-	// capturing group of LeStartPattern's match to a time.Time struct.
+	// capturing group of LeStartPattern's match to a time.Time struct. More information
+	// can be found about time formats here https://golang.org/pkg/time/#pkg-constants.
 	LeTimeFormat string
 }
 
@@ -311,16 +321,20 @@ func findLogEntries(buf []byte, bOffset int64, scanToPos int, lastNlPos int,
 	return lastLePos, lastNlPos, false, nil
 }
 
-/*ReverseSearch searches the log file specified by filePath for matching
-log entries. "Matching log entries" are those that match all regular expressions
-contained in searchCriteria.Regexps, while satisfying any specified time constraints.
-In addition, the first log entry in the reverse traversal of the log file that fails
-the searchCriteria.FromTime constraint will trigger the abort mechanism, which will
-end the search process. Matching log entries are passed to outputHandler as
-they're found. There are two return variables:
-1) exitStatus (int): -1 indicates an error was found, 0 indicates normal
- 	 execution without issues, 1 indicates file is empty (not considered an error)
-2) err (error) */
+// ReverseSearch searches the log file specified by filePath for matching
+// log entries. "Matching log entries" are those that match all regular expressions
+// contained in searchCriteria.Regexps, while satisfying any specified time constraints.
+// In addition, the first log entry in the reverse traversal of the log file that fails
+// the searchCriteria.FromTime constraint will trigger the abort mechanism, which will
+// end the search process. Matching log entries are passed to outputHandler as
+// they're found. There are two return variables:
+//
+// 1) exitStatus (int): -1 indicates an error was found, 0 indicates normal
+// execution without issues, 1 indicates file is empty (not considered an error)
+//
+// 2) err (error)
+//
+// Please refer to examples/main.go for examples of function usage.
 func ReverseSearch(filePath string, searchCriteria *SearchCriteria,
 	outputHandler OutputHandler) (int, error) {
 
