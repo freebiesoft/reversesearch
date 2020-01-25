@@ -8,7 +8,7 @@ One of the main reasons I started this project was to learn TDD and increase my 
 
 ### The Vision
 
-The vision is to create a general log file searching library that will offer:
+The vision is to create a high performance general log file searching library that will offer the following functionalities:
 
 - <b>ForwardSearch:</b> a forward searching function that would terminate searches after failing UntilTime conditions, and would be designed to be more performant when only UntilTime is specified, or if you know the information you're looking for will be closer to the beginning of the log file
 - <b>ReverseSearch:</b> (already implemented of course!) a reverse searching function that would terminate searches after failing FromTime conditions, and would be designed to be more performant when only FromTime is specified, or if you know the information you're looking for will be closer to the end of the log file
@@ -23,7 +23,7 @@ Although lots of focus has already gone into making the ReverseSearch function a
 
 To get started, quickly run through the prerequisites below and then check the examples/main.go for a quick walkthrough.
 
-#### Prerequisites
+### Prerequisites
 
 Before being able to run reversesearch there is a package dependency that you will need to download. Please open up a terminal and run the following command:
 
@@ -53,7 +53,7 @@ This will run both unit tests and integration tests; i.e. the tests in reversese
 - Can specify own match mechanics via a custom output handler (see example 4 in examples/main.go).
 - Works seamlessly with log files that use single or multi line log entries.
 - Works seamlessly with log files that use either windows style newlines (CRLF) or Unix style newlines (LF).
-- Code has been commented with GoDoc in mind.
+- Code has been commented in line with GoDoc standards.
 
 ## Limitations and Assumptions
 
