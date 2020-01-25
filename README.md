@@ -4,6 +4,8 @@ Reversesearch is a library that allows callers to search log files in reverse. T
 
 The idea behind this is that most of the time I have wanted to search through large log files (on the scale of gigabytes), I am usually only interested in log entries that were logged within a relatively short amount of time ago from now. Under such scenarios it would be much more efficient to search log files in reverse, and terminate the search upon finding a log entry that was logged before a specified time.
 
+One of the main reasons I started this project was to learn TDD and increase my Go programming skills, however, if enough people show interest in this project, or if I found any use for a high performance log searching library in the future. I will continue work as per the vision, the backlog, and any other community suggestions.
+
 #### The Vision
 
 The vision is to create a more general log file searching library that will offer a forward searching function (that would terminate searches after failing UntilTime conditions), a reverse searching function (already implemented of course!), and a function designed for time ranges (i.e. when FromTime and UntilTime are both specified) which would employ a binary search based algorithm that would find the point at which the time range starts within the log file, then use forward search mechanics until the UntilTime constraint fails.
