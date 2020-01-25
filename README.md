@@ -6,7 +6,7 @@ The idea behind this is that most of the time I have wanted to search through la
 
 One of the main reasons I started this project was to learn TDD and increase my Go programming skills, however, if enough people show interest in this project, or if I found any use for a high performance log searching library in the future, I will continue work as per the vision, the backlog (see docs/backlog.md), and community suggestions (please feel free to suggest features).
 
-#### The Vision
+### The Vision
 
 The vision is to create a general log file searching library that will offer:
 
@@ -16,7 +16,7 @@ The vision is to create a general log file searching library that will offer:
 
 Possibly a wrapping function could be implemented too, which would guess which of the aforementioned functions would be the most performant based on specified information such as the search criteria and log file.
 
-Although lots of focus has already gone into making the ReverseSearch function as optimised as possible, there're ideas to make it further optimised that're awaiting implementation (see docs/backlog.md for more info). Further on, it would be great to create a C translation of the library (along with provided bindings for Python and Go) as C's regexp library (PCRE) is a lot more performant than Go's, and this library's performance is highly dependent on the regular expression engine used, but this may depend on community suggestions.
+Although lots of focus has already gone into making the ReverseSearch function as optimised as possible, there're ideas to make it further optimised that're awaiting implementation (see docs/backlog.md for more info). Further on, it would be great to create a C translation of the library (along with provided bindings for Python and Go) as C's regexp library (PCRE) is a lot more performant than Go's, and this library's performance is highly dependent on the regular expression engine used.
 
 
 ## Getting Started
