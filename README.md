@@ -21,7 +21,7 @@ Although lots of focus has already gone into making the ReverseSearch function a
 
 ## Getting Started
 
-To get started, quickly run through the prerequisites below and then check the examples/main.go for a quick walkthrough.
+To get started, run through the prerequisites below and then check the examples/main.go for a quick walkthrough.
 
 ### Prerequisites
 
