@@ -57,7 +57,7 @@ This will run both unit tests and integration tests; i.e. the tests in reversese
 
 ## Limitations and Assumptions
 
-- This library has only been tested with UTF-8 encoded files (but ASCII encoded files should work fine too), moreover, UTF-8 (variable length encoding) & ASCII encodings were the only ones considered during development.
+- This library has only been tested with UTF-8 encoded files (but ANSI encoded files should work fine too), moreover, UTF-8 (variable length encoding) & ANSI encodings were the only ones considered during development.
 - This library has only been tested on Windows and Linux.
 - Log files must be standardised and predictable in nature i.e.:
   - must be able to define how a log entry "starts" via regular expressions and be able to capture their time stamps within (a regex construct known as) a capturing group.
