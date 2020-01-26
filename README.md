@@ -39,7 +39,7 @@ go get github.com/freebiesoft/reversesearch
 
 ## Running the tests
 
-As this project was developed using TDD and the nature of the code is very bug prone, there are lots of tests and they are very thorough! To run them all, simply type the following command from the root project directory:
+As this project was developed using TDD and due to the nature of the code it is very bug prone, there are lots of tests and they are very thorough! To run them all, simply type the following command from the root project directory:
 
 ```
 go test
@@ -57,13 +57,13 @@ This will run both unit tests and integration tests; i.e. the tests in reversese
 
 ## Limitations and Assumptions
 
+- This library has only been tested with UTF-8 encoded files (but ASCII encoded files should work fine too), moreover, UTF-8 (variable length encoding) & ASCII encodings were the only ones considered during development.
+- This library has only been tested on Windows and Linux.
 - Log files must be standardised and predictable in nature i.e.:
   - must be able to define how a log entry "starts" via regular expressions and be able to capture their time stamps within (a regex construct known as) a capturing group.
-  - time format in the timestamp must remain the same throughout log entries.
+  - the format of the timestamp must remain the same throughout log entries.
 - The size of any given log entry within a log file can be no greater than MaxBufLen.
 - Log entries within log files are strictly in chronological order. If you work with log files where this isn't the case (as can be the case where log entries' time stamps reflect something other than time of logging such as time of request), then you could add some sort of "tolerance time" to the time constraints e.g. add or subtract a certain amount of time from your time constraints depending on your circumstances.
-- This library has only been tested on Windows and Linux.
-- This library has only been tested with UTF-8 encoded files (but ASCII encoded files should work fine too), moreover, UTF-8 (variable length encoding) & ASCII encodings were the only ones considered during development.
 
 ## License
 
