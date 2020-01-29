@@ -12,7 +12,7 @@ The vision is to create a high performance general log file searching library th
 
 - <b>ForwardSearch:</b> a forward searching function that would terminate searches after failing UntilTime conditions, and would be designed to be more performant when only UntilTime is specified, or if you know the information you're looking for will be closer to the beginning of the log file
 - <b>ReverseSearch:</b> (already implemented of course!) a reverse searching function that would terminate searches after failing FromTime conditions, and would be designed to be more performant when only FromTime is specified, or if you know the information you're looking for will be closer to the end of the log file
-- <b>MiddleSearch:</b> a function designed to be more performant for time ranges (i.e. when FromTime and UntilTime are both specified) which would employ a binary search based algorithm to find the point at which the time range starts within the log file, then use forward search mechanics until the UntilTime constraint fails. Also, feel free to suggest a better name for this function :-)
+- <b>BinarySearch:</b> a function designed to be more performant for time ranges (i.e. when FromTime and UntilTime are both specified) which would employ a binary search based algorithm to find the point at which the time range starts within the log file, then use forward search mechanics until the UntilTime constraint fails.
 
 Possibly a wrapping function could be implemented too, which would guess which of the aforementioned functions would be the most performant based on specified information such as the search criteria and log file.
 
