@@ -1,6 +1,6 @@
-# Reversesearch
+# ReverseSearch
 
-Reversesearch is a library that allows callers to search log files in reverse. Time constraints may be specified such as "FromTime" and "UntilTime"; when a log entry is discovered with a timestamp that is before the FromTime constraint, the process terminates and no further log entries are searched within the log file, thus saving time & resources. The library works seamlessly for single and multi line log entries alike.
+ReverseSearch is a library that allows callers to search log files in reverse. Time constraints may be specified such as "FromTime" and "UntilTime"; when a log entry is discovered with a timestamp that is before the FromTime constraint, the process terminates and no further log entries are searched within the log file, thus saving time & resources. The library works seamlessly for single and multi line log entries alike.
 
 The idea behind this is that most of the time I have wanted to search through large log files (on the scale of gigabytes), I am usually only interested in log entries that were logged within a relatively short amount of time ago. Under such scenarios it would be much more efficient to search log files in reverse, and terminate the search upon finding a log entry that was logged before a specified time.
 
