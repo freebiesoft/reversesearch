@@ -64,4 +64,4 @@ const BadRegexps = "one of the regex strings in search criteria's Regexps field 
 
 // BadFilePath is returned (encapsulated in an error) when user specifies a non existent filePath parameter
 // to ReverseSearch. The value on this is platform dependant
-const BadFilePath = "No such file or directory"
+const BadFilePath = "no such file or directory"
